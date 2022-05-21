@@ -31,9 +31,9 @@ platformio.exe run --target upload --target monitor --environment ttgo-lora32-v1
 
 ## Using
 
-* After boot up the unit stays on the information screen whichs shows the allocated IP address & mac address. 
-* MQTT messages are being published reagrdless of what screen you are on
-* To switch to the temperature screen `long press` the bottom button (left of the USB). You should now see the current temperature displayed.
+* After boot up the unit stays on the information screen which shows the allocated IP address & MAC address. 
+* MQTT messages are being published regardless of what screen you are on
+* To switch to the temperature screen `long press` the bottom button (left of the USB). You should now see the current temperature displayed (see image below)
 * To toggle between celsius and fahrenheit `long press` the top button (right of the USB). 
 * Due to the timer you may need to `long press` a few times.
 * To toggle to the timing screen `long press` the bottom button (left of the USB).
