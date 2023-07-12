@@ -104,7 +104,7 @@ void leftButtonPress(Button2 &btn)
 
 void rightButtonPress(Button2 &btn)
 {
-  tft.fillRect(0, 120, 60, 12, TFT_BLACK);
+  tft.fillScreen(TFT_BLACK);
 
   showCelsius = !showCelsius;
   
@@ -224,6 +224,8 @@ void setup()
 
 void displayTemperatureOnly(int currentTemperature, char cf, uint16_t temperatureColour)
 {
+  tft.fillScreen(TFT_BLACK);
+  
   if (currentTemperature > 99.99)
     tft.setCursor(8, 10);
   else
@@ -261,6 +263,8 @@ void displayTemperatureOnly(int currentTemperature, char cf, uint16_t temperatur
 
 void displayTimer()
 {
+  tft.fillScreen(TFT_BLACK);
+
   int remaining = maxCounterInSeconds - CD.remaining();
   Serial.print(remaining);
   int s = remaining % 60;
@@ -320,6 +324,11 @@ void loop() {
   else if (currentDisplayMode == count)
   {
     displayTimer();
+  }
+  else {
+    // Coming from the default "info" screen. Wait and then show temperature screen
+    delay(2000);
+    currentDisplayMode = temperatureOnly;
   }
 
   delay(1000);
